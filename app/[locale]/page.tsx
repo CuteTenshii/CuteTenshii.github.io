@@ -46,5 +46,11 @@ export async function generateMetadata(): Promise<Metadata> {
       description,
       images: [pfp.src],
     },
+    alternates: {
+      languages: {
+        en: 'https://yuuto.dev/en',
+        fr: 'https://yuuto.dev/fr',
+      }
+    }
   };
 }
