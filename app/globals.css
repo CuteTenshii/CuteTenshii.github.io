@@ -1,0 +1,14 @@
+@import 'tailwindcss';
+
+@layer base {
+    *, ::before, ::after {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        background-image: linear-gradient(45deg, #0A0F29 0%, #1B2A41 100%);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        color: theme(colors.white);
+    }
+}
