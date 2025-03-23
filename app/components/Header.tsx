@@ -1,6 +1,8 @@
 'use client';
 
-export default function Header() {
+import { usePathname, useRouter } from '@/utils/i18n/navigation';
+
+export default function Header({ locale }: { locale: string }) {
   const links = [
     {
       name: 'What I Use',
@@ -15,15 +17,25 @@ export default function Header() {
       url: '#contact'
     }
   ];
+  const router = useRouter();
+  const pathname = usePathname();
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 flex items-center justify-center md:justify-between px-8 py-4 backdrop-blur">
-      <span role="link" className="cursor-pointer text-2xl font-bold max-md:hidden" onClick={() => {
-        scroll(0, 0);
-      }}>
-        Yuuto
-        <span className="text-base text-gray-500">.dev</span>
-      </span>
+      <div>
+        <span role="link" className="cursor-pointer text-2xl font-bold max-md:hidden" onClick={() => {
+          scroll(0, 0);
+        }}>
+          Yuuto
+          <span className="text-base text-gray-500">.dev</span>
+        </span>
+        <select onChange={(e) => {
+          router.push(pathname, { locale: e.target.value });
+        }} className="ml-4 cursor-pointer">
+          <option value="en" selected={locale === 'en'}>🇺🇸</option>
+          <option value="fr" selected={locale === 'fr'}>🇫🇷</option>
+        </select>
+      </div>
       <nav>
         <ul className="flex gap-6">
           {links.map(link => (
