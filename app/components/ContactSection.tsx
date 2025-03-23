@@ -3,14 +3,17 @@ import {
 } from '@icons-pack/react-simple-icons';
 import { Mail } from 'lucide-react';
 import Link from 'next/link';
+import { useTranslations } from 'next-intl';
 
 export default function ContactSection() {
+  const t = useTranslations();
+
   return (
     <section id="contact" className="flex h-screen flex-col items-center justify-center gap-8 px-6">
       <div className="space-y-6 text-center">
-        <h1 className="text-4xl font-bold">Contact</h1>
+        <h1 className="text-4xl font-bold">{t('Contact')}</h1>
         <p>
-          Do you want to contact me? Here are some ways to do so.
+          {t('ContactDescription')}
         </p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

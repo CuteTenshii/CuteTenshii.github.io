@@ -3,6 +3,7 @@ import yuuto from '../img/yuuto.png';
 import bkfrapi from '../img/bkfrapi.png';
 import { Fragment } from 'react';
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 
 type Technology = 'Next.js' | 'Tailwind' | 'Node.js' | 'TypeScript' | 'Electron' | 'React' |
   'Vercel' | 'Axios';
@@ -54,13 +55,14 @@ export default function ProjectsSection() {
     'Vercel': 'https://vercel.com',
     'Axios': 'https://axios-http.com',
   };
+  const t = useTranslations();
 
   return (
     <section id="projects">
       <div className="relative flex min-h-screen flex-col items-center justify-center pt-20 text-center">
-        <div className="max-w-lg space-y-4">
-          <h1 className="text-4xl font-bold">Projects</h1>
-          <p>Here&apos;s a list of some of the projects I&apos;ve worked on.</p>
+        <div className="max-w-xl space-y-4">
+          <h1 className="text-4xl font-bold">{t('Projects')}</h1>
+          <p>{t('ProjectsDescription')}</p>
         </div>
         <div className="mx-4 my-8 grid grid-cols-1 gap-8 xl:grid-cols-2">
           {projects.map(project => (
@@ -75,14 +77,14 @@ export default function ProjectsSection() {
               <div className="flex items-center justify-between">
                 <h2 className="truncate text-2xl font-bold" title={project.name}>{project.name}</h2>
                 <a href={project.url} className="text-blue-500 duration-150 hover:text-blue-400" target="_blank">
-                  View project
+                  {t('ViewProject')}
                 </a>
               </div>
               <p>{project.description}</p>
               {project.madeWith && (
                 <div className="flex space-x-2 text-sm text-gray-500">
                   <span>
-                    Made with&nbsp;
+                    {t('MadeWith')}&nbsp;
                     {project.madeWith.map(tech => (
                       <Fragment key={tech}>
                         {links[tech] ? (

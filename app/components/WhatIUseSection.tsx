@@ -18,6 +18,7 @@ import {
 } from '@icons-pack/react-simple-icons';
 import Chips from '@/app/components/Chips';
 import { useState } from 'react';
+import { useTranslations } from 'next-intl';
 
 export default function WhatIUseSection() {
   const items = [
@@ -67,16 +68,17 @@ export default function WhatIUseSection() {
     }
   ];
   const [filteredItems, setFilteredItems] = useState(items);
+  const t = useTranslations();
 
   return (
     <section id="what-i-use" className="relative flex min-h-screen flex-col items-center justify-center pt-20 mx-3 text-center space-y-8">
       <div className="space-y-4">
-        <h1 className="text-4xl font-bold">What do I use?</h1>
+        <h1 className="text-4xl font-bold">{t('WhatDoIUse')}</h1>
         <p>
-          Here are some of the software and tools I use on a daily basis.
+          {t('WhatDoIUseDescription')}
         </p>
       </div>
-      <Chips items={['Development', 'Operating Systems', 'Tools']} onChange={(selected) => {
+      <Chips items={[t('Development'), t('OperatingSystems'), t('Tools')]} onChange={(selected) => {
         const newItems = items.filter(item => selected.includes(item.category));
         if (!selected.length) return setFilteredItems(items);
         setFilteredItems(newItems);

@@ -1,19 +1,21 @@
 'use client';
 
 import { usePathname, useRouter } from '@/utils/i18n/navigation';
+import { useTranslations } from 'next-intl';
 
 export default function Header({ locale }: { locale: string }) {
+  const t = useTranslations();
   const links = [
     {
-      name: 'What I Use',
+      name: t('WhatIUse'),
       url: '#what-i-use'
     },
     {
-      name: 'Projects',
+      name: t('Projects'),
       url: '#projects'
     },
     {
-      name: 'Contact',
+      name: t('Contact'),
       url: '#contact'
     }
   ];
