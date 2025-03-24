@@ -33,9 +33,9 @@ export default function Header({ locale }: { locale: string }) {
         </span>
         <select onChange={(e) => {
           router.push(pathname, { locale: e.target.value });
-        }} className="ml-4 cursor-pointer">
-          <option value="en" selected={locale === 'en'}>🇺🇸</option>
-          <option value="fr" selected={locale === 'fr'}>🇫🇷</option>
+        }} className="ml-4 cursor-pointer bg-none border-none" defaultValue={locale}>
+          <option value="en">🇺🇸</option>
+          <option value="fr">🇫🇷</option>
         </select>
       </div>
       <nav>
