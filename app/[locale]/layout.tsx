@@ -17,7 +17,7 @@ export default async function RootLayout({ children, params }: {
   return (
     <html lang={locale} dir="ltr" className={`${firaCode.className} antialiased`}>
       <body>
-        <PlausibleProvider domain="yuuto.dev" customDomain="analytics.yuuto.dev" selfHosted>
+        <PlausibleProvider domain="yuuto.dev" customDomain="https://analytics.yuuto.dev" selfHosted>
           <NextIntlClientProvider>
             {children}
           </NextIntlClientProvider>
