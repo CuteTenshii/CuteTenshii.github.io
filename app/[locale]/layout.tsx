@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 import { hasLocale, NextIntlClientProvider } from 'next-intl';
 import { routing } from '@/utils/i18n/routing';
 import PlausibleProvider from 'next-plausible';
+import { setRequestLocale } from 'next-intl/server';
 
 const firaCode = Fira_Code({ subsets: ['latin'] });
 
@@ -13,6 +14,7 @@ export default async function RootLayout({ children, params }: {
 }) {
   const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) return notFound();
+  setRequestLocale(locale);
 
   return (
     <html lang={locale} dir="ltr" className={`${firaCode.className} antialiased`}>

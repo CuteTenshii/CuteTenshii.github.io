@@ -11,7 +11,8 @@ const nextConfig: NextConfig = {
         pathname: '/JustYuuto/deezer-discord-rpc/master/screenshots/rpc.png',
       }
     ]
-  }
+  },
+  output: 'export',
 };
 const withNextIntl = createNextIntlPlugin('./utils/i18n/request.ts');
 

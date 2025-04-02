@@ -2,9 +2,12 @@
 
 import { usePathname, useRouter } from '@/utils/i18n/navigation';
 import { useTranslations } from 'next-intl';
+import { useParams } from 'next/navigation';
 
-export default function Header({ locale }: { locale: string }) {
+export default function Header() {
   const t = useTranslations();
+  const params = useParams();
+  const locale = params.locale as string;
   const links = [
     {
       name: t('WhatIUse'),
