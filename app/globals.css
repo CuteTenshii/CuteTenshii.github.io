@@ -3,6 +3,7 @@
 @layer base {
     *, ::before, ::after {
         scroll-behavior: smooth;
+        cursor: none !important;
     }
 
     html {

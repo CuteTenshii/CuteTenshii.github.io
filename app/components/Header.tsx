@@ -2,6 +2,7 @@
 
 import { Link } from '@/utils/i18n/navigation';
 import { useTranslations } from 'next-intl';
+import React from 'react';
 
 export default function Header() {
   const t = useTranslations();
@@ -28,14 +29,14 @@ export default function Header() {
       </div>
       <nav className="mx-auto">
         <ul className="flex gap-3">
-          {links.map((link, i) => <>
-            <li key={link.url}>
+          {links.map((link, i) => <React.Fragment key={link.url}>
+            <li>
               <a href={link.url} className="text-gray-100 duration-150 hover:text-gray-400">
                 {link.name}
               </a>
             </li>
             {links.length - 1 !== i && <span className="text-gray-400">&bull;</span>}
-          </>)}
+          </React.Fragment>)}
         </ul>
       </nav>
       <div className="flex items-center justify-end gap-3 text-lg max-md:hidden">

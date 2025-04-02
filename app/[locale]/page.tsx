@@ -6,10 +6,12 @@ import ProjectsSection from '../components/ProjectsSection';
 import ContactSection from '../components/ContactSection';
 import WhatIUseSection from '../components/WhatIUseSection';
 import { getMessages } from 'next-intl/server';
+import CircleCursor from '@/app/components/CircleCursor';
 
 export default function Page() {
   return (
     <>
+      <CircleCursor />
       <Header />
       <MainSection />
       <WhatIUseSection />
