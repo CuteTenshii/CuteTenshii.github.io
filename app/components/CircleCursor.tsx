@@ -45,7 +45,7 @@ export default function CircleCursor() {
 
   return (
     <div
-      className="size-5 rounded-full fixed top-0 left-0 pointer-events-none opacity-0 duration-100 z-[500] transition-transform"
+      className="size-5 rounded-full fixed top-0 left-0 pointer-events-none opacity-0 duration-100 z-[500] transition-opacity"
       ref={cursorRef}
     >
       {type === 'default' && <MousePointer2 fill="#fff" />}
