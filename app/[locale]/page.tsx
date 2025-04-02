@@ -5,14 +5,9 @@ import MainSection from '../components/MainSection';
 import ProjectsSection from '../components/ProjectsSection';
 import ContactSection from '../components/ContactSection';
 import WhatIUseSection from '../components/WhatIUseSection';
-import { getMessages, setRequestLocale } from 'next-intl/server';
-import { routing } from '@/utils/i18n/routing';
-import { use } from 'react';
+import { getMessages } from 'next-intl/server';
 
-export default function Page({ params }: { params: Promise<{ locale: string }> }) {
-  const { locale } = use(params);
-  setRequestLocale(locale);
-
+export default function Page() {
   return (
     <>
       <Header />
@@ -56,8 +51,4 @@ export async function generateMetadata(): Promise<Metadata> {
       }
     }
   };
-}
-
-export function generateStaticParams() {
-  return routing.locales.map((locale) => ({ locale }));
 }

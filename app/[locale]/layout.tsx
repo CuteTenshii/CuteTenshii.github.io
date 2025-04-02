@@ -1,20 +1,18 @@
 import '../globals.css';
+import PlausibleProvider from 'next-plausible';
 import { Fira_Code } from 'next/font/google';
-import { notFound } from 'next/navigation';
 import { hasLocale, NextIntlClientProvider } from 'next-intl';
 import { routing } from '@/utils/i18n/routing';
-import PlausibleProvider from 'next-plausible';
-import { setRequestLocale } from 'next-intl/server';
+import { notFound } from 'next/navigation';
 
 const firaCode = Fira_Code({ subsets: ['latin'] });
 
-export default async function RootLayout({ children, params }: {
+export default async function Layout({ children, params }: {
   children: React.ReactNode,
   params: Promise<{ locale: string }>
 }) {
   const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) return notFound();
-  setRequestLocale(locale);
 
   return (
     <html lang={locale} dir="ltr" className={`${firaCode.className} antialiased`}>

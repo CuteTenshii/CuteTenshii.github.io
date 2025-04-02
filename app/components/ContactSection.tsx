@@ -34,8 +34,8 @@ export default function ContactSection() {
             <Mail className="size-8" />
             <h2>Mail</h2>
           </div>
-          <Link href="mailto:notyuuto@outlook.com" className="p-3 rounded-lg bg-gray-800 text-white">
-            notyuuto@outlook.com
+          <Link href="mailto:yuuto@yuuto.dev" className="p-3 rounded-lg bg-gray-800 text-white">
+            yuuto@yuuto.dev
           </Link>
         </div>
       </div>
