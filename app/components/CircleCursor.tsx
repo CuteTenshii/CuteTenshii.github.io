@@ -7,6 +7,10 @@ export default function CircleCursor() {
   const cursorRef = useRef<HTMLDivElement>(null);
   const [type, setType] = useState('default');
   useEffect(() => {
+    const isMobile = window.matchMedia('(pointer: coarse)').matches && navigator.maxTouchPoints > 0;
+    // Disable the custom cursor on mobile devices
+    if (isMobile) return;
+
     addEventListener('mousemove', (e) => {
       if (!cursorRef.current) return;
       cursorRef.current.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
@@ -41,6 +45,13 @@ export default function CircleCursor() {
         setType('default');
       }
     });
+
+    return () => {
+      removeEventListener('mousemove', () => {});
+      removeEventListener('visibilitychange', () => {});
+      removeEventListener('mouseout', () => {});
+      removeEventListener('mouseover', () => {});
+    };
   }, []);
 
   return (
