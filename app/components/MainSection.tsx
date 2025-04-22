@@ -17,7 +17,7 @@ export default function MainSection() {
             A 17 yo developer from France.
           </p>
         </div>
-        <div className="relative flex min-h-screen flex-col items-start justify-center px-4 pb-15">
+        <div className="relative flex min-h-screen flex-col items-start justify-center px-4 max-lg:pb-15">
           <div>
             <h2 className="text-2xl lg:text-3xl font-bold">Who am I?</h2>
             <p className="mt-4 leading-7">
