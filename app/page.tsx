@@ -1,30 +1,20 @@
 import { Metadata } from 'next';
-import pfp from '../img/pfp.jpg';
-import Header from '../components/Header';
-import MainSection from '../components/MainSection';
-import ProjectsSection from '../components/ProjectsSection';
-import ContactSection from '../components/ContactSection';
-import WhatIUseSection from '../components/WhatIUseSection';
-import { getMessages } from 'next-intl/server';
+import pfp from './img/pfp.jpg';
+import MainSection from './components/MainSection';
 import CircleCursor from '@/app/components/CircleCursor';
 
 export default function Page() {
   return (
     <>
       <CircleCursor />
-      <Header />
       <MainSection />
-      <WhatIUseSection />
-      <ProjectsSection />
-      <ContactSection />
     </>
   );
 }
 
 export async function generateMetadata(): Promise<Metadata> {
-  const messages = await getMessages();
   const title = 'Yuuto.dev';
-  const description = messages.OgDescription;
+  const description = 'Yuuto\'s personal website, a 17 years old developer from France.\nI code things and sometimes it\'s good';
 
   return {
     metadataBase: new URL('https://yuuto.dev'),
@@ -46,11 +36,5 @@ export async function generateMetadata(): Promise<Metadata> {
       description,
       images: [pfp.src],
     },
-    alternates: {
-      languages: {
-        en: 'https://yuuto.dev/en',
-        fr: 'https://yuuto.dev/fr',
-      }
-    }
   };
 }

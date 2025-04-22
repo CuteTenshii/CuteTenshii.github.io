@@ -11,8 +11,7 @@
   "dependencies": {
     "@icons-pack/react-simple-icons": "^12.3.0",
     "lucide-react": "^0.483.0",
-    "next": "^15.2.4",
-    "next-intl": "^4.0.2",
+    "next": "^15.3.1",
     "next-plausible": "^3.12.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"

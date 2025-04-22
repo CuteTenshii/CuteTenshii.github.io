@@ -36,10 +36,9 @@ export default function CircleCursor() {
         cursorRef.current.style.opacity = '1';
 
       const tag = (e.target as HTMLElement).tagName.toLowerCase();
-      const isClickable = !!(e.target as HTMLElement).onclick;
-      if (tag === 'a' || tag === 'button' || isClickable) {
+      if (tag === 'a' || tag === 'button' || tag === 'svg' || tag === 'path' || tag === 'rect') {
         setType('link');
-      } else if (['input', 'textarea', 'span', 'p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6',].includes(tag)) {
+      } else if (['span', 'p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6'].includes(tag)) {
         setType('text');
       } else {
         setType('default');
@@ -56,7 +55,7 @@ export default function CircleCursor() {
 
   return (
     <div
-      className="size-5 rounded-full fixed top-0 left-0 pointer-events-none opacity-0 z-[500]"
+      className="size-5 rounded-full fixed top-0 left-0 pointer-events-none opacity-0 z-[500] drop-shadow-[0_0_10px_rgba(255,255,255,0.5)]"
       ref={cursorRef}
     >
       {type === 'default' && <MousePointer2 fill="#fff" />}
