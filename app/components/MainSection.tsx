@@ -17,7 +17,7 @@ export default function MainSection() {
             A 17 yo developer from France.
           </p>
         </div>
-        <div className="relative flex min-h-screen flex-col items-start justify-center px-4 mb-5">
+        <div className="relative flex min-h-screen flex-col items-start justify-center px-4 pb-15">
           <div>
             <h2 className="text-2xl lg:text-3xl font-bold">Who am I?</h2>
             <p className="mt-4 leading-7">
@@ -60,7 +60,7 @@ export default function MainSection() {
           </div>
         </div>
       </div>
-      <div className="absolute bottom-10 left-0 right-0 flex justify-center text-md text-gray-500">
+      <div className="absolute bottom-10 left-0 right-0 flex justify-center text-md text-gray-500 lg:hidden">
         Scroll down to know more about me!
       </div>
     </section>
