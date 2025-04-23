@@ -33,17 +33,15 @@ export default function DiscordStatus() {
     if (activity.name === 'WebStorm' || activity.name === 'PhpStorm' || activity.name === 'GoLand') {
       return activity.state ? `${activity.state} in ${activity.details}` : `In ${activity.name}`;
     }
-    if (activity.type === 2) return <>
-      Listening to {activity.state} - {activity.details}
-    </>;
+    if (activity.type === 2) return <>Listening to {activity.state} - {activity.details}</>;
   };
   const activity = status?.activities?.find(activity => activity.type !== 4);
   const Icon = getIcon(activity?.type || 0, activity?.name || '') || Music;
 
   return status && (
-    <div className="w-[30rem] text-sm text-gray-500 flex justify-center items-center gap-3">
+    <div className="lg:w-[32rem] w-full px-5 text-sm text-gray-500 flex justify-center items-center gap-3 text-left">
       <div className="size-7"><Icon size={28} /></div>
-      <div className="text-left">{getState(activity)}</div>
+      <div>{getState(activity)}</div>
     </div>
   );
 }
