@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Music } from 'lucide-react';
 import { SiGoland, SiPhpstorm, SiWebstorm } from '@icons-pack/react-simple-icons';
 
@@ -36,9 +36,9 @@ export default function DiscordStatus() {
     if (activity.type === 2) return <>Listening to {activity.state} - {activity.details}</>;
   };
   const activity = status?.activities?.find(activity => activity.type !== 4);
-  const Icon = getIcon(activity?.type || 0, activity?.name || '') || Music;
+  const Icon = getIcon(activity?.type || 0, activity?.name || '') || React.Fragment;
 
-  return status && (
+  return activity && (
     <div className="lg:w-[32rem] w-full px-5 text-sm text-gray-500 flex justify-center items-center gap-3 text-left">
       <div className="size-7"><Icon size={28} /></div>
       <div>{getState(activity)}</div>

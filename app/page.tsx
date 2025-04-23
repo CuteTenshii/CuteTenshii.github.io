@@ -44,8 +44,7 @@ export default function Page() {
               <Image
                 src="https://miwa.lol/_next/static/media/miwa-48.346d071b.png" width={48} height={48} className="w-6 h-7 pb-1 inline"
                 alt="Miwa.lol Logo" draggable={false}
-              />
-              , a very customizable biolinks website.<br/>
+              />, a very customizable biolinks website.<br/>
               I recommend you to check it out :)
             </p>
           </div>
@@ -54,7 +53,7 @@ export default function Page() {
             <h2 className="text-2xl lg:text-3xl font-bold">Where can you find me?</h2>
             <div className="mt-4 leading-7">
               You want to contact me? You can reach me on Discord or by email:
-              <div className="flex items-center gap-4 mt-2">
+              <div className="flex flex-wrap items-center gap-4 mt-2">
                 <a className="flex items-center gap-2 text-white no-underline" href="https://discord.com/users/269415459735076864" target="_blank" rel="noopener noreferrer">
                   <SiDiscord className="size-6" color={SiDiscordHex} />
                   @its.yuuto
