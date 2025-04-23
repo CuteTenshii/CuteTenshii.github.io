@@ -1,8 +1,9 @@
 import { Metadata } from 'next';
 import pfp from './img/pfp.jpg';
 import Image from 'next/image';
-import { SiDiscord } from '@icons-pack/react-simple-icons';
+import { SiDiscord, SiDiscordHex } from '@icons-pack/react-simple-icons';
 import { Mail } from 'lucide-react';
+import DiscordStatus from '@/app/DiscordStatus';
 
 export default function Page() {
   return (
@@ -17,6 +18,7 @@ export default function Page() {
           <p>
             A 17 yo developer from France.
           </p>
+          <DiscordStatus />
         </div>
         <div className="relative flex min-h-screen flex-col items-start justify-center px-4 max-lg:pb-15">
           <div>
@@ -30,7 +32,7 @@ export default function Page() {
           <div>
             <h2 className="text-2xl lg:text-3xl font-bold">What do I do?</h2>
             <p className="mt-4 leading-7">
-              I&apos;m working mostly on web development (React, Next.js, etc.), APIs (Express, Gin, etc.).<br/>
+              I&apos;m working mostly on web development (React, Next.js…), APIs (Express, Gin…).<br/>
               Since the last weeks, I&apos;ve been learning Go and the Gin framework.<br/>
             </p>
           </div>
@@ -38,7 +40,12 @@ export default function Page() {
           <div>
             <h2 className="text-2xl lg:text-3xl font-bold">What am I working on?</h2>
             <p className="mt-4 leading-7">
-              I&apos;m currently working on <a href="https://miwa.lol" className="font-semibold">Miwa.lol</a>, a very customizable biolinks website.<br/>
+              I&apos;m currently working on <a href="https://miwa.lol" className="font-semibold">Miwa.lol</a>{' '}
+              <Image
+                src="https://miwa.lol/_next/static/media/miwa-48.346d071b.png" width={48} height={48} className="w-6 h-7 pb-1 inline"
+                alt="Miwa.lol Logo" draggable={false}
+              />
+              , a very customizable biolinks website.<br/>
               I recommend you to check it out :)
             </p>
           </div>
@@ -49,12 +56,19 @@ export default function Page() {
               You want to contact me? You can reach me on Discord or by email:
               <div className="flex items-center gap-4 mt-2">
                 <a className="flex items-center gap-2 text-white no-underline" href="https://discord.com/users/269415459735076864" target="_blank" rel="noopener noreferrer">
-                  <SiDiscord className="size-6" />
+                  <SiDiscord className="size-6" color={SiDiscordHex} />
                   @its.yuuto
                 </a>
                 <a className="flex items-center gap-2 text-white no-underline" href="mailto:yuuto@yuuto.dev">
                   <Mail className="size-6" />
                   yuuto@yuuto.dev
+                </a>
+                <a className="flex items-center gap-2 text-white no-underline" href="https://miwa.lol/yuuto" target="_blank">
+                  <Image
+                    src="https://miwa.lol/_next/static/media/miwa-48.346d071b.png" width={48} height={48} className="size-6"
+                    alt="Miwa.lol Logo" draggable={false}
+                  />
+                  miwa.lol/yuuto
                 </a>
               </div>
             </div>
