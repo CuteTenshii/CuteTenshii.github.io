@@ -1,11 +1,6 @@
 @import 'tailwindcss';
 
 @layer base {
-    *, ::before, ::after {
-        scroll-behavior: smooth;
-        cursor: none !important;
-    }
-
     html {
         background-image: linear-gradient(45deg, #222d42 0%, #254376 100%);
         background-repeat: no-repeat;
@@ -25,5 +20,16 @@
         100% {
             background-position: 0 50%;
         }
+    }
+
+    a {
+        color: theme(colors.blue.500);
+        text-decoration: none;
+        transition: all 0.2s ease-in-out;
+    }
+
+    a:hover {
+        color: theme(colors.blue.300);
+        text-decoration: underline;
     }
 }
