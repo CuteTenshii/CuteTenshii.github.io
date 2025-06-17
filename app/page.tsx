@@ -53,7 +53,7 @@ export default function Page() {
               <div className="flex flex-wrap items-center gap-4 mt-2">
                 <a className="flex items-center gap-2 text-white no-underline" href="https://discord.com/users/269415459735076864" target="_blank" rel="noopener noreferrer">
                   <SiDiscord className="size-6" color={SiDiscordHex} />
-                  @its.yuuto
+                  @cutetenshii
                 </a>
                 <a className="flex items-center gap-2 text-white no-underline" href="mailto:tenshii@tenshii.moe">
                   <Mail className="size-6" />
