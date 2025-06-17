@@ -3,7 +3,6 @@ import pfp from './img/pfp.jpg';
 import Image from 'next/image';
 import { SiDiscord, SiDiscordHex } from '@icons-pack/react-simple-icons';
 import { Mail } from 'lucide-react';
-import DiscordStatus from '@/app/DiscordStatus';
 
 export default function Page() {
   return (
@@ -14,11 +13,9 @@ export default function Page() {
             src={pfp} alt="Avatar" className="mx-auto mb-8 size-48 rounded-full" draggable={false}
             width={192} height={192} quality={100}
           />
-          <h1 className="text-4xl font-bold">Hi! I&apos;m Yuuto</h1>
-          <p>
-            A 17 yo developer from France.
-          </p>
-          <DiscordStatus />
+          <h1 className="text-4xl font-bold">Hi! I&apos;m Tenshii</h1>
+          <span className="text-lg text-gray-500">formerly known as Yuuto</span>
+          <p>A 17 yo developer from France.</p>
         </div>
         <div className="relative flex min-h-screen flex-col items-start justify-center px-4 max-lg:pb-15">
           <div>
@@ -40,7 +37,7 @@ export default function Page() {
           <div>
             <h2 className="text-2xl lg:text-3xl font-bold">What am I working on?</h2>
             <p className="mt-4 leading-7">
-              I&apos;m currently working on <a href="https://miwa.lol" className="font-semibold">Miwa.lol</a>{' '}
+              I&apos;m currently working on <a href="https://miwa.lol/?utm_source=tenshii.moe" className="font-semibold">Miwa.lol</a>{' '}
               <Image
                 src="https://miwa.lol/_next/static/media/miwa-48.346d071b.png" width={48} height={48} className="w-6 h-7 pb-1 inline"
                 alt="Miwa.lol Logo" draggable={false}
@@ -58,16 +55,16 @@ export default function Page() {
                   <SiDiscord className="size-6" color={SiDiscordHex} />
                   @its.yuuto
                 </a>
-                <a className="flex items-center gap-2 text-white no-underline" href="mailto:yuuto@yuuto.dev">
+                <a className="flex items-center gap-2 text-white no-underline" href="mailto:tenshii@tenshii.moe">
                   <Mail className="size-6" />
-                  yuuto@yuuto.dev
+                  tenshii@tenshii.moe
                 </a>
-                <a className="flex items-center gap-2 text-white no-underline" href="https://miwa.lol/yuuto" target="_blank">
+                <a className="flex items-center gap-2 text-white no-underline" href="https://miwa.lol/tenshii" target="_blank">
                   <Image
                     src="https://miwa.lol/_next/static/media/miwa-48.346d071b.png" width={48} height={48} className="size-6"
                     alt="Miwa.lol Logo" draggable={false}
                   />
-                  miwa.lol/yuuto
+                  miwa.lol/tenshii
                 </a>
               </div>
             </div>
@@ -82,11 +79,11 @@ export default function Page() {
 }
 
 export async function generateMetadata(): Promise<Metadata> {
-  const title = 'Yuuto.dev';
-  const description = 'Yuuto\'s personal website, a 17 years old developer from France.\nI code things and sometimes it\'s good';
+  const title = 'Tenshii.moe';
+  const description = 'Tenshii\'s personal website, a 17 years old developer from France.\nI code things and sometimes it\'s good';
 
   return {
-    metadataBase: new URL('https://yuuto.dev'),
+    metadataBase: new URL('https://tenshii.moe'),
     title,
     description,
     icons: {
@@ -98,8 +95,8 @@ export async function generateMetadata(): Promise<Metadata> {
       images: [pfp.src],
     },
     twitter: {
-      creator: '@YuutoGoat',
-      site: '@YuutoGoat',
+      creator: '@CuteTenshii',
+      site: '@CuteTenshii',
       card: 'summary',
       title,
       description,
