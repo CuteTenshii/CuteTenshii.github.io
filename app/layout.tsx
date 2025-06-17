@@ -8,7 +8,7 @@ export default async function Layout({ children }: { children: React.ReactNode, 
   return (
     <html lang="en" dir="ltr" className={`${jetBrainsMono.className} antialiased`}>
       <body>
-        <PlausibleProvider domain="yuuto.dev" customDomain="https://analytics.yuuto.dev" selfHosted trackOutboundLinks>
+        <PlausibleProvider domain="tenshii.moe" customDomain="https://analytics.tenshii.moe" selfHosted trackOutboundLinks>
           {children}
         </PlausibleProvider>
       </body>
