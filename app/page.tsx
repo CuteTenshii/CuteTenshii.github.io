@@ -15,7 +15,7 @@ export default function Page() {
           />
           <h1 className="text-4xl font-bold">Hi! I&apos;m Tenshii</h1>
           <span className="text-lg text-gray-500">formerly known as Yuuto</span>
-          <p>A 17 yo developer from France.</p>
+          <p>A 18 yo developer from France.</p>
         </div>
         <div className="relative flex min-h-screen flex-col items-start justify-center px-4 max-lg:pb-15">
           <div>
