@@ -80,7 +80,7 @@ export default function Page() {
 
 export async function generateMetadata(): Promise<Metadata> {
   const title = 'Tenshii.moe';
-  const description = 'Tenshii\'s personal website, a 17 years old developer from France.\nI code things and sometimes it\'s good';
+  const description = 'Tenshii\'s personal website, a 18 years old developer from France.\nI code things, and sometimes it\'s useful :3';
 
   return {
     metadataBase: new URL('https://tenshii.moe'),
