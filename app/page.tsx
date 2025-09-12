@@ -14,8 +14,7 @@ export default function Page() {
             width={192} height={192} quality={100}
           />
           <h1 className="text-4xl font-bold">Hi! I&apos;m Tenshii</h1>
-          <span className="text-lg text-gray-500">formerly known as Yuuto</span>
-          <p>A 18 yo developer from France.</p>
+          <p>A 18 yo developer from France 🇫🇷.</p>
         </div>
         <div className="relative flex min-h-screen flex-col items-start justify-center px-4 max-lg:pb-15">
           <div>
@@ -37,12 +36,16 @@ export default function Page() {
           <div>
             <h2 className="text-2xl lg:text-3xl font-bold">What am I working on?</h2>
             <p className="mt-4 leading-7">
-              I&apos;m currently working on <a href="https://miwa.lol/?utm_source=tenshii.moe" className="font-semibold">Miwa.lol</a>{' '}
-              <Image
-                src="https://miwa.lol/_next/static/media/miwa-48.346d071b.png" width={48} height={48} className="w-6 h-7 pb-1 inline"
-                alt="Miwa.lol Logo" draggable={false}
-              />, a very customizable biolinks website.<br/>
-              I recommend you to check it out :)
+              I&apos;m currently working on {' '}
+              <a
+                href="https://miwa.lol/?utm_source=tenshii.moe" target="_blank" rel="noopener" className="font-semibold"
+              >
+                <Image
+                  src="https://miwa.lol/images/miwa-48.png" width={48} height={48} className="w-6 h-7 pb-1 mr-1.5 inline"
+                  alt="Miwa.lol Logo" draggable={false}
+                />
+                Miwa.lol
+              </a>, a very customizable biolinks website.<br/>I recommend you to check it out :)
             </p>
           </div>
           <div className="w-full h-1 from-gray-800 to-transparent bg-gradient-to-r my-4"></div>
@@ -61,7 +64,7 @@ export default function Page() {
                 </a>
                 <a className="flex items-center gap-2 text-white no-underline" href="https://miwa.lol/tenshii" target="_blank">
                   <Image
-                    src="https://miwa.lol/_next/static/media/miwa-48.346d071b.png" width={48} height={48} className="size-6"
+                    src="https://miwa.lol/images/miwa-48.png" width={48} height={48} className="size-6"
                     alt="Miwa.lol Logo" draggable={false}
                   />
                   miwa.lol/tenshii
