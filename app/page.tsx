@@ -1,83 +1,39 @@
 import { Metadata } from 'next';
 import pfp from './img/pfp.jpg';
 import Image from 'next/image';
-import { SiDiscord, SiDiscordHex } from '@icons-pack/react-simple-icons';
-import { Mail } from 'lucide-react';
+import Projects from '@/app/components/Projects';
+import React from 'react';
+import Header from '@/app/components/Header';
 
 export default function Page() {
   return (
-    <>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-        <div className="relative flex h-screen lg:h-screen flex-col items-center justify-center text-center gap-4">
-          <Image
-            src={pfp} alt="Avatar" className="mx-auto mb-8 size-48 rounded-full" draggable={false}
-            width={192} height={192} quality={100}
-          />
+    <React.Fragment>
+      <Header />
+      <div className="relative flex items-center justify-center text-center gap-4 h-[80vh] px-8 max-md:flex-col lg:flex-col">
+        <Image
+          src={pfp} alt="Avatar" className="mx-auto mb-8 size-48 rounded-full" draggable={false}
+          width={192} height={192}
+        />
+        <div className="flex flex-col items-center gap-4 max-w-2xl">
           <h1 className="text-4xl font-bold">Hi! I&apos;m Tenshii</h1>
-          <p>A 18 yo developer from France 🇫🇷.</p>
-        </div>
-        <div className="relative flex min-h-screen flex-col items-start justify-center px-4 max-lg:pb-15">
-          <div>
-            <h2 className="text-2xl lg:text-3xl font-bold">Who am I?</h2>
-            <p className="mt-4 leading-7">
-              I am a self-taught developer with a passion for programming.<br/>
-              I started coding at the age of 11, and have been learning ever since.
-            </p>
-          </div>
-          <div className="w-full h-1 from-gray-800 to-transparent bg-gradient-to-r my-4"></div>
-          <div>
-            <h2 className="text-2xl lg:text-3xl font-bold">What do I do?</h2>
-            <p className="mt-4 leading-7">
-              I&apos;m working mostly on web development (React, Next.js…), APIs (Express, Gin…).<br/>
-              Since the last weeks, I&apos;ve been learning Go and the Gin framework.<br/>
-            </p>
-          </div>
-          <div className="w-full h-1 from-gray-800 to-transparent bg-gradient-to-r my-4"></div>
-          <div>
-            <h2 className="text-2xl lg:text-3xl font-bold">What am I working on?</h2>
-            <p className="mt-4 leading-7">
-              I&apos;m currently working on {' '}
-              <a
-                href="https://miwa.lol/?utm_source=tenshii.moe" target="_blank" rel="noopener" className="font-semibold"
-              >
-                <Image
-                  src="https://miwa.lol/images/miwa-48.png" width={48} height={48} className="w-6 h-7 pb-1 mr-1.5 inline"
-                  alt="Miwa.lol Logo" draggable={false}
-                />
-                Miwa.lol
-              </a>, a very customizable biolinks website.<br/>I recommend you to check it out :)
-            </p>
-          </div>
-          <div className="w-full h-1 from-gray-800 to-transparent bg-gradient-to-r my-4"></div>
-          <div>
-            <h2 className="text-2xl lg:text-3xl font-bold">Where can you find me?</h2>
-            <div className="mt-4 leading-7">
-              You want to contact me? You can reach me on Discord or by email:
-              <div className="flex flex-wrap items-center gap-4 mt-2">
-                <a className="flex items-center gap-2 text-white no-underline" href="https://discord.com/users/269415459735076864" target="_blank" rel="noopener noreferrer">
-                  <SiDiscord className="size-6" color={SiDiscordHex} />
-                  @cutetenshii
-                </a>
-                <a className="flex items-center gap-2 text-white no-underline" href="mailto:tenshii@tenshii.moe">
-                  <Mail className="size-6" />
-                  tenshii@tenshii.moe
-                </a>
-                <a className="flex items-center gap-2 text-white no-underline" href="https://miwa.lol/tenshii" target="_blank">
-                  <Image
-                    src="https://miwa.lol/images/miwa-48.png" width={48} height={48} className="size-6"
-                    alt="Miwa.lol Logo" draggable={false}
-                  />
-                  miwa.lol/tenshii
-                </a>
-              </div>
-            </div>
-          </div>
+          <p>
+            A 18 yo developer from France 🇫🇷 &bull; Scroll down to see my projects ^~^
+          </p>
+          <p className="text-lg">
+            I build{' '}
+            <a href="https://miwa.lol" target="_blank" className="space-x-2">
+              <Image
+                src="https://miwa.lol/images/miwa-48.png" alt="Miwa.lol logo" className="inline size-6 rounded-full mr-2"
+                draggable={false} width={24} height={24}
+              />
+              <span>Miwa.lol</span>
+            </a>, a modern and customizable biolinks website, and is a good alternative to Linktree and others!
+            <span className="mt-2 text-sm text-gray-400">Trusted by more than 1,200 users, and still growing!</span>
+          </p>
         </div>
       </div>
-      <div className="absolute bottom-10 left-0 right-0 flex justify-center text-md text-gray-500 lg:hidden">
-        Scroll down to know more about me!
-      </div>
-    </>
+      <Projects/>
+    </React.Fragment>
   );
 }
 
