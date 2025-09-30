@@ -17,6 +17,7 @@ const eslintConfig = [
       semi: ['error', 'always'],
       quotes: ['error', 'single'],
       'object-curly-spacing': ['error', 'always'],
+      '@typescript-eslint/ban-ts-comment': 0
     }
   }
 ];

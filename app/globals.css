@@ -6,12 +6,12 @@
     }
 
     html {
-        background-image: linear-gradient(45deg, #222d42 0%, #254376 100%);
+        background-image: var(--background);
         background-repeat: no-repeat;
         background-attachment: fixed;
-        color: theme(colors.white);
-        animation: movingBg 10s ease-in-out infinite;
         background-size: 200% 200%;
+        backdrop-filter: blur(8px);
+        color: theme(colors.white);
     }
 
     @keyframes movingBg {

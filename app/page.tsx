@@ -4,6 +4,9 @@ import Image from 'next/image';
 import Projects from '@/app/components/Projects';
 import React from 'react';
 import Header from '@/app/components/Header';
+import WakapiStats from '@/app/components/WakapiStats';
+import Setup from '@/app/components/Setup';
+import Footer from '@/app/components/Footer';
 
 export default function Page() {
   return (
@@ -15,7 +18,7 @@ export default function Page() {
           width={192} height={192}
         />
         <div className="flex flex-col items-center gap-4 max-w-2xl">
-          <h1 className="text-4xl font-bold">Hi! I&apos;m Tenshii</h1>
+          <h1 className="text-4xl font-bold">Hi! I&apos;m Tenshii ^w^</h1>
           <p>
             A 18 yo developer from France 🇫🇷 &bull; Scroll down to see my projects ^~^
           </p>
@@ -33,6 +36,9 @@ export default function Page() {
         </div>
       </div>
       <Projects/>
+      <WakapiStats />
+      <Setup />
+      <Footer />
     </React.Fragment>
   );
 }
