@@ -6,7 +6,7 @@
     }
 
     html {
-        background-image: var(--background);
+        background-image: var(--background) #000;
         background-repeat: no-repeat;
         background-attachment: fixed;
         background-size: 200% 200%;
