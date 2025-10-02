@@ -9,7 +9,8 @@ export default function Setup() {
         <div className="bg-white dark:bg-gray-800 shadow-md rounded-lg p-6 relative">
           <Image
             src="https://raw.githubusercontent.com/CuteTenshii/dotfiles/refs/heads/master/desktop.png" draggable={false}
-            alt="Desktop Setup" width={800} height={450} className="absolute inset-0 rounded-lg mb-4 size-full object-cover z-0 opacity-20 object-top"
+            alt="Desktop Setup" width={800} height={450}
+            className="absolute inset-0 rounded-lg mb-4 size-full object-cover z-0 opacity-20 object-top"
           />
           <div className="z-10 relative">
             <h3 className="text-2xl font-semibold mb-4">Development Environment</h3>
