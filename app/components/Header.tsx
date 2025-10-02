@@ -16,7 +16,7 @@ export default function Header() {
           <Image
             src={pfp.src} alt="Avatar" className="size-10 rounded-full" draggable={false} width={40} height={40}
           />
-          <h1 className="text-2xl font-bold max-md:hidden">Tenshii.moe</h1>
+          <h1 className="text-2xl font-bold">Tenshii.moe</h1>
         </Link>
         <nav className="flex items-center">
           <button className="md:hidden mr-2" onClick={() => setOpenMenu(!openMenu)} aria-label="Toggle menu">
