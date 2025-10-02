@@ -6,15 +6,13 @@ export default function Hero() {
   return (
     <div className="relative flex items-center justify-center text-center gap-4 h-[80vh] px-8 max-md:flex-col lg:flex-col">
       <Image
-        src={pfp} alt="Avatar" className="mx-auto mb-8 size-48 rounded-full" draggable={false}
+        src={pfp} alt="Avatar" className="mx-auto mb-3 size-48 rounded-full" draggable={false}
         width={192} height={192}
       />
-      <div className="flex flex-col items-center gap-4 max-w-2xl">
-        <h1 className="text-4xl font-bold">Hi! I&apos;m Tenshii :)</h1>
-        <div className="space-y-1.5">
-          <p>A 18 yo developer from France 🇫🇷</p>
-          <p>Scroll down to see my projects ^~^</p>
-        </div>
+      <div className="flex flex-col items-center max-w-2xl">
+        <h1 className="text-4xl mb-5 font-bold">Hi! I&apos;m Tenshii :)</h1>
+        <p className="mb-0.5">A 18 yo developer from France 🇫🇷</p>
+        <p className="mb-5">Scroll down to know more about me ^~^</p>
         <p className="text-lg">
           I build{' '}
           <a href="https://miwa.lol" target="_blank" className="space-x-2">
@@ -24,8 +22,8 @@ export default function Hero() {
             />
             <span>Miwa.lol</span>
           </a>, a modern and customizable biolinks website, and is a good alternative to Linktree and others!
-          <span className="mt-2 text-sm text-gray-400">Trusted by more than 1,200 users, and still growing!</span>
         </p>
+        <span className="text-sm mt-0.5 md:mt-1.5 text-gray-400">Trusted by more than 1,200 users, and still growing!</span>
       </div>
     </div>
   );

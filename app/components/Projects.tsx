@@ -8,7 +8,7 @@ export default function Projects() {
       description: 'A modern and customizable biolinks website, already used by more than 1,200 users!',
       link: 'https://miwa.lol',
       image: 'https://miwa.lol/images/miwa-256.png',
-      builtWith: <>Next.js, Tailwind CSS, PostgreSQL, ... <a href="https://help.miwa.lol/misc/open-source/#website">more details</a></>,
+      builtWith: <>Next.js, Tailwind CSS, Go (API), PostgreSQL... <a href="https://help.miwa.lol/misc/open-source/#website" target="_blank">more details</a></>,
     },
     {
       name: 'Tenshii.moe',
@@ -21,7 +21,7 @@ export default function Projects() {
       name: 'Deezer Discord RPC',
       description: 'A Discord RPC for Deezer',
       link: 'https://github.com/CuteTenshii/deezer-discord-rpc',
-      image: 'https://github.com/CuteTenshii/deezer-discord-rpc/raw/master/screenshots/rpc.png',
+      image: 'https://raw.githubusercontent.com/CuteTenshii/deezer-discord-rpc/master/screenshots/rpc.png',
       builtWith: 'Electron, TypeScript',
     },
     {
@@ -40,43 +40,63 @@ export default function Projects() {
     },
     {
       name: 'dotfiles',
-      description: 'My dotfiles for Arch Linux, with Hyprland, zsh, kitty...',
+      description: 'My dotfiles for Arch Linux, with Hyprland, zsh, kitty... It also includes some scripts I made for my VPS',
       link: 'https://github.com/CuteTenshii/dotfiles',
-      image: 'https://github.com/CuteTenshii/dotfiles/raw/master/desktop.png',
+      image: 'https://raw.githubusercontent.com/CuteTenshii/dotfiles/master/desktop.png',
       builtWith: 'config files',
+    },
+    {
+      name: 'favicon',
+      description: 'A Cloudflare Worker that serve a website\'s favicon from a given website URL',
+      link: 'https://github.com/CuteTenshii/favicon',
+      image: null,
+      builtWith: 'TypeScript, Cloudflare Workers',
+    },
+    {
+      name: 'Pixel World',
+      description: 'A collaborative pixel art board on the earth\'s map, similar to Wplace but not vibecoded',
+      link: 'https://pixelworld.place',
+      image: 'https://pixelworld.place/assets/icons/icon-256.png',
+      builtWith: 'React (front), Go (backend + WS), PostgreSQL...',
     }
   ];
 
   return (
     <div className="container mx-auto px-4 py-8 pt-28" id="projects">
-      <h2 className="text-3xl font-bold text-center mb-8">Projects</h2>
+      <h2 className="text-3xl font-bold text-center mb-5">Projects</h2>
+      <p className="text-center mb-8">
+        A few projects I&apos;ve worked on. You can see more on my{' '}
+        <a href="https://github.com/CuteTenshii" target="_blank" rel="noopener">GitHub</a>.
+      </p>
       <div>
         <div className="grid gap-8 sm:grid-cols-2">
           {projects.map((project) => {
             return (
               <div
                 key={project.name}
-                className="block border border-gray-700 rounded-lg p-4 hover:shadow-lg transition-shadow duration-300"
+                className="border relative border-gray-600 p-4 rounded-lg hover:shadow-lg transition-shadow duration-300 flex gap-2 has-[img]:flex-row-reverse justify-between"
               >
                 {project.image && (
-                  <a href={project.link} target="_blank" rel="noopener">
+                  <a href={project.link} target="_blank" rel="noopener" className="block flex-shrink-0">
                     <Image
-                      src={project.image} alt={`${project.name} Logo`} draggable={false} width={64} height={64}
-                      className="h-28 w-auto mb-4 mx-auto float-right"
+                      src={project.image} alt={`${project.name} Logo`} draggable={false} width={112} height={112}
+                      className="w-auto h-full max-lg:w-full object-cover lg:h-28 mx-auto max-lg:absolute max-lg:inset-0 z-0 max-lg:opacity-40 rounded-lg"
                     />
                   </a>
                 )}
-                <h3 className="text-xl font-semibold mb-2">
-                  <a href={project.link} target="_blank" rel="noopener">
-                    {project.name}
-                  </a>
-                </h3>
-                <p className="text-gray-400">{project.description}</p>
-                {project.builtWith && (
-                  <p className="text-gray-500 text-sm mt-2">
+                <div className="z-10">
+                  <h3 className="text-xl font-semibold mb-2">
+                    <a href={project.link} target="_blank" rel="noopener">
+                      {project.name}
+                    </a>
+                  </h3>
+                  <p className="text-gray-300">{project.description}</p>
+                  {project.builtWith && (
+                    <p className="text-gray-400 text-sm mt-2">
                     Built with: {project.builtWith}
-                  </p>
-                )}
+                    </p>
+                  )}
+                </div>
               </div>
             );
           })}
