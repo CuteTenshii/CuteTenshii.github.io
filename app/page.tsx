@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import pfp from './img/pfp.jpg';
+import pfp from './img/pfp.webp';
 import Projects from '@/app/components/Projects';
 import React from 'react';
 import Header from '@/app/components/Header';
@@ -35,6 +35,7 @@ export async function generateMetadata(): Promise<Metadata> {
     openGraph: {
       title,
       description,
+      type: 'website',
       images: [pfp.src],
     },
     twitter: {

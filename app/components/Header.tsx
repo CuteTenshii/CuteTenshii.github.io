@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import pfp from '@/app/img/pfp.jpg';
+import pfp from '@/app/img/pfp.webp';
 import Image from 'next/image';
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';

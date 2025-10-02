@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import pfp from '@/app/img/pfp.jpg';
+import pfp from '@/app/img/pfp.webp';
 import React from 'react';
 
 export default function Hero() {

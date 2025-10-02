@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import pfp from '@/app/img/pfp.jpg';
+import pfp from '@/app/img/pfp.webp';
 
 export default function Projects() {
   const projects = [
