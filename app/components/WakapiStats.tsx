@@ -98,7 +98,7 @@ export default function WakapiStats() {
   }, []);
 
   return (
-    <div className="container mx-auto px-4 py-8" id="stats">
+    <div className="container mx-auto px-4 py-8 pt-28" id="stats">
       <h2 className="text-3xl font-bold text-center mb-8">Programming Stats</h2>
       <p className="text-center mb-8">
         Data tracked since July 2025 using Wakapi, an open-source alternative to WakaTime.

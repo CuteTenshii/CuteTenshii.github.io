@@ -48,7 +48,7 @@ export default function Projects() {
   ];
 
   return (
-    <div className="container mx-auto px-4 py-8" id="projects">
+    <div className="container mx-auto px-4 py-8 pt-28" id="projects">
       <h2 className="text-3xl font-bold text-center mb-8">Projects</h2>
       <div>
         <div className="grid gap-8 sm:grid-cols-2">
