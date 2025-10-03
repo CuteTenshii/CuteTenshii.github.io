@@ -12,7 +12,11 @@ export default async function Layout({ children }: { children: React.ReactNode, 
       ['--background' as string]: `url(${bg.src})`,
     }}>
       <body>
-        <PlausibleProvider domain="tenshii.moe" customDomain="https://analytics.tenshii.moe" selfHosted trackOutboundLinks>
+        <PlausibleProvider domain="tenshii.moe" scriptProps={{
+          src: 'https://analytics.tenshii.moe/js/script.outbound-links.js',
+          // @ts-ignore
+          'data-api': 'https://analytics.tenshii.moe/api/record',
+        }}>
           {children}
         </PlausibleProvider>
       </body>
