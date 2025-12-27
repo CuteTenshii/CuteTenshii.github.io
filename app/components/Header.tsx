@@ -27,7 +27,7 @@ export default function Header() {
             data-open={openMenu} aria-label="Main navigation"
           >
             <li>
-              <Link href="#projects" shallow onClick={() => setOpenMenu(false)}>Projects</Link>
+              <Link href="/projects" shallow onClick={() => setOpenMenu(false)}>Projects</Link>
             </li>
             <li>
               <Link href="#stats" shallow onClick={() => setOpenMenu(false)}>Programming Stats</Link>

@@ -1,27 +1,28 @@
+import { Metadata } from 'next';
 import Image from 'next/image';
 import pfp from '@/app/img/pfp.webp';
 
-export default function Projects() {
+export default function Page() {
   const projects = [
     {
       name: 'Miwa.lol',
-      description: 'A modern and customizable biolinks website, already used by more than 1,200 users!',
+      description: 'A modern and customizable biolinks website, already used by more than 1,600 users!',
       link: 'https://miwa.lol',
       image: 'https://miwa.lol/images/miwa-256.png',
-      builtWith: <>Next.js, Tailwind CSS, Go (API), PostgreSQL... <a href="https://help.miwa.lol/misc/open-source/#website" target="_blank">more details</a></>,
+      builtWith: <>Next.js, Tailwind, Go (API), PostgreSQL... <a href="https://help.miwa.lol/misc/open-source/#website" target="_blank">more details</a></>,
     },
     {
       name: 'Tenshii.moe',
       description: 'My personal website, you are currently on it!',
       link: 'https://tenshii.moe',
       image: pfp.src,
-      builtWith: 'Next.js, TypeScript, Tailwind CSS',
+      builtWith: 'Next.js, TypeScript, Tailwind',
     },
     {
       name: 'Deezer Discord RPC',
       description: 'A Discord RPC for Deezer',
       link: 'https://github.com/CuteTenshii/deezer-discord-rpc',
-      image: 'https://raw.githubusercontent.com/CuteTenshii/deezer-discord-rpc/master/screenshots/rpc.png',
+      image: 'https://raw.githubusercontent.com/CuteTenshii/deezer-discord-rpc/refs/heads/master/.github/screenshots/rpc.png',
       builtWith: 'Electron, TypeScript',
     },
     {
@@ -32,11 +33,11 @@ export default function Projects() {
       builtWith: 'Go',
     },
     {
-      name: 'Spotify Downloader',
-      description: 'A Python script to download music straight from Spotify servers',
-      link: 'https://github.com/CuteTenshii/spotify-downloader',
+      name: 'Crunchyroll Downloader',
+      description: 'A Go program to download episodes from Crunchyroll. Merges video and audio segments (and optionally subtitles) into a MKV container.',
+      link: 'https://github.com/CuteTenshii/crunchyroll-downloader',
       image: null,
-      builtWith: 'Python, pywidevine, ffmpeg',
+      builtWith: 'Go, gowidevine',
     },
     {
       name: 'dotfiles',
@@ -44,6 +45,13 @@ export default function Projects() {
       link: 'https://github.com/CuteTenshii/dotfiles',
       image: 'https://raw.githubusercontent.com/CuteTenshii/dotfiles/master/desktop.png',
       builtWith: 'config files',
+    },
+    {
+      name: 'Paradise Bay server',
+      description: 'Reverse-engineering of the custom protocol of the 2015 "Paradise Bay" game ',
+      link: 'https://github.com/CuteTenshii/paradise-bay-server',
+      image: null,
+      builtWith: 'Go',
     },
     {
       name: 'favicon',
@@ -62,7 +70,7 @@ export default function Projects() {
   ];
 
   return (
-    <div className="container mx-auto px-4 py-8 pt-28" id="projects">
+    <div className="container mx-auto px-4 py-8 pt-16" id="projects">
       <h2 className="text-3xl font-bold text-center mb-5">Projects</h2>
       <p className="text-center mb-8">
         A few projects I&apos;ve worked on. You can see more on my{' '}
@@ -77,7 +85,7 @@ export default function Projects() {
                 className="border relative border-gray-600 p-4 rounded-lg hover:shadow-lg transition-shadow duration-300 flex gap-2 has-[img]:flex-row-reverse justify-between"
               >
                 {project.image && (
-                  <a href={project.link} target="_blank" rel="noopener" className="block flex-shrink-0">
+                  <a href={project.link} target="_blank" rel="noopener" className="block shrink-0">
                     <Image
                       src={project.image} alt={`${project.name} Logo`} draggable={false} width={112} height={112}
                       className="w-auto h-full max-lg:w-full object-cover lg:h-28 mx-auto max-lg:absolute max-lg:inset-0 z-0 max-lg:opacity-40 rounded-lg"
@@ -93,7 +101,7 @@ export default function Projects() {
                   <p className="text-gray-300">{project.description}</p>
                   {project.builtWith && (
                     <p className="text-gray-400 text-sm mt-2">
-                    Built with: {project.builtWith}
+                      Built with: {project.builtWith}
                     </p>
                   )}
                 </div>
@@ -105,3 +113,7 @@ export default function Projects() {
     </div>
   );
 }
+
+export const metadata: Metadata = {
+  title: 'Projects',
+};
