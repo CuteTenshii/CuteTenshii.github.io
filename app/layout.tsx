@@ -5,6 +5,7 @@ import { JetBrains_Mono } from 'next/font/google';
 import React from 'react';
 import Header from '@/app/components/Header';
 import Footer from '@/app/components/Footer';
+import pfp from '@/app/img/pfp.webp';
 
 const jetBrainsMono = JetBrains_Mono({ subsets: ['latin'] });
 
@@ -31,5 +32,15 @@ export const metadata: Metadata = {
   title: {
     template: '%s - Tenshii.moe',
     default: 'Tenshii.moe',
+  },
+  openGraph: {
+    type: 'website',
+    images: [pfp.src],
+  },
+  twitter: {
+    card: 'summary',
+    creator: '@CuteTenshii',
+    site: '@CuteTenshii',
+    images: [pfp.src],
   },
 };

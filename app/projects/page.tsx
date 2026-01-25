@@ -116,4 +116,5 @@ export default function Page() {
 
 export const metadata: Metadata = {
   title: 'Projects',
+  description: 'A few projects I&apos;ve worked on. You can see more on my GitHub: https://github.com/CuteTenshii',
 };
