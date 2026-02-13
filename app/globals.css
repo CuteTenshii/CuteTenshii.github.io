@@ -9,10 +9,11 @@
         position: relative;
         background-color: #000;
         color: theme(colors.white);
+        font-family: 'Fira Mono', 'Apple Color Emoji', sans-serif;
     }
 
     html::before {
-        content: "";
+        content: '';
         position: fixed;
         inset: 0;
         z-index: -1;

@@ -30,10 +30,10 @@ export default function Header() {
               <Link href="/projects" shallow onClick={() => setOpenMenu(false)}>Projects</Link>
             </li>
             <li>
-              <Link href="#stats" shallow onClick={() => setOpenMenu(false)}>Programming Stats</Link>
+              <Link href="/#stats" shallow onClick={() => setOpenMenu(false)}>Programming Stats</Link>
             </li>
             <li>
-              <Link href="#setup" shallow onClick={() => setOpenMenu(false)}>Setup</Link>
+              <Link href="/#setup" shallow onClick={() => setOpenMenu(false)}>Setup</Link>
             </li>
           </ul>
         </nav>

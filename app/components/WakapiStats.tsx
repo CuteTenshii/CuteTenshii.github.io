@@ -10,6 +10,7 @@ import {
   SiWebstorm, SiYaml
 } from '@icons-pack/react-simple-icons';
 import VSCodeLogo from '@/app/components/VSCodeLogo';
+import { LoaderCircle } from 'lucide-react';
 
 export default function WakapiStats() {
   const [languages, setLanguages] = useState<Stat[]>([]);
@@ -99,13 +100,17 @@ export default function WakapiStats() {
 
   return (
     <div className="container mx-auto px-4 py-8 pt-28" id="stats">
-      <h2 className="text-3xl font-bold text-center mb-8">Programming Stats</h2>
-      <p className="text-center mb-8">
-        Data tracked since July 2025 using Wakapi, an open-source alternative to WakaTime.
+      <h2 className="text-3xl font-bold text-center mb-4">Programming Stats</h2>
+      <p className="text-center mb-8 text-sm text-gray-300">
+        Data tracked since July 2025 using <a href="https://github.com/muety/wakapi" target="_blank" rel="noreferrer">Wakapi</a>, an open-source alternative to WakaTime.
       </p>
+
       <div className="max-w-7xl mx-auto">
         {languages.length === 0 ? (
-          <p className="text-center">Loading...</p>
+          <div className="animate-pulse flex items-center gap-2 justify-center">
+            <LoaderCircle className="animate-spin" />
+            <span>Loading...</span>
+          </div>
         ) : (
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
             {languages.slice(0, 9).map((lang) => {
@@ -153,6 +158,7 @@ export default function WakapiStats() {
                 );
               })}
             </div>
+
             <div className="w-full bg-gray-200 rounded-full h-6 dark:bg-gray-700 flex overflow-hidden">
               {editors.slice(0, 9).map((editor) => {
                 // @ts-ignore

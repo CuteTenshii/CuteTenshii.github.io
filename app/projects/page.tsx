@@ -76,13 +76,14 @@ export default function Page() {
         A few projects I&apos;ve worked on. You can see more on my{' '}
         <a href="https://github.com/CuteTenshii" target="_blank" rel="noopener">GitHub</a>.
       </p>
+
       <div>
         <div className="grid gap-8 sm:grid-cols-2">
           {projects.map((project) => {
             return (
               <div
                 key={project.name}
-                className="border relative border-gray-600 p-4 rounded-lg hover:shadow-lg transition-shadow duration-300 flex gap-2 has-[img]:flex-row-reverse justify-between"
+                className="border relative border-gray-600 p-4 rounded-lg hover:shadow-lg transition-shadow duration-300 flex gap-2 has-[img]:flex-row-reverse justify-between backdrop-blur-lg"
               >
                 {project.image && (
                   <a href={project.link} target="_blank" rel="noopener" className="block shrink-0">
@@ -94,15 +95,12 @@ export default function Page() {
                 )}
                 <div className="z-10">
                   <h3 className="text-xl font-semibold mb-2">
-                    <a href={project.link} target="_blank" rel="noopener">
-                      {project.name}
-                    </a>
+                    <a href={project.link} target="_blank" rel="noopener">{project.name}</a>
                   </h3>
+
                   <p className="text-gray-300">{project.description}</p>
                   {project.builtWith && (
-                    <p className="text-gray-400 text-sm mt-2">
-                      Built with: {project.builtWith}
-                    </p>
+                    <p className="text-gray-400 text-sm mt-2">Built with: {project.builtWith}</p>
                   )}
                 </div>
               </div>
