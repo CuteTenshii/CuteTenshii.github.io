@@ -33,11 +33,11 @@ export default function Setup() {
 
   return (
     <div className="container px-4 py-8 pt-28 max-w-7xl mx-auto grid gap-8" id="setup">
-      <div className="bg-white dark:bg-gray-800 shadow-md rounded-lg p-6 relative">
+      <div className="shadow-md rounded-lg p-6 relative">
         <Image
           src="https://raw.githubusercontent.com/CuteTenshii/dotfiles/refs/heads/master/desktop.png" draggable={false}
           alt="Desktop Setup" width={800} height={450}
-          className="absolute inset-0 rounded-lg mb-4 size-full object-cover z-0 opacity-20 object-top blur-[1px]"
+          className="absolute inset-0 rounded-lg mb-4 size-full object-cover z-0 opacity-50 object-top blur-[1px]"
         />
 
         <div className="z-10 relative text-center">
@@ -57,7 +57,7 @@ export default function Setup() {
         </div>
       </div>
 
-      <div className="bg-white dark:bg-gray-800 shadow-md rounded-lg p-6">
+      <div className="bg-gray-800 shadow-md rounded-lg p-6">
         <h3 className="text-2xl font-semibold mb-4">Software Stack</h3>
         <p className="mb-4">My development environment includes the following software:</p>
         <ul className="list-disc list-inside">
