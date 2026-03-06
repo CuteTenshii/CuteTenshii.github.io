@@ -14,7 +14,7 @@ export default async function Layout({ children }: { children: React.ReactNode, 
     <html lang="en" dir="ltr" className={`${firaMono.className} antialiased`}>
       <body>
         <PlausibleProvider domain="tenshii.moe" scriptProps={{
-          src: 'https://analytics.tenshii.moe/_s/outbound-links.js',
+          src: 'https://s.tenshii.moe/_s/outbound-links.js',
         }}>
           <Header />
           {children}
