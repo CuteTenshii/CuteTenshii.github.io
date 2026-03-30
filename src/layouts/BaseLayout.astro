@@ -1,0 +1,40 @@
+---
+import Header from '@/components/Header';
+import Footer from '@/components/Footer.astro';
+import '@/styles/globals.css';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description } = Astro.props;
+const ogImage = '/img/pfp.webp';
+---
+<!doctype html>
+<html lang="en" dir="ltr" class="antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    {description && <meta name="description" content={description} />}
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    {description && <meta property="og:description" content={description} />}
+    <meta property="og:image" content={ogImage} />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:creator" content="@CuteTenshii" />
+    <meta name="twitter:site" content="@CuteTenshii" />
+    <meta name="twitter:image" content={ogImage} />
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;700&display=swap" rel="stylesheet" />
+    <script defer data-domain="tenshii.moe" src="https://s.tenshii.moe/_s/outbound-links.js"></script>
+  </head>
+  <body>
+    <Header client:load />
+    <slot />
+    <Footer />
+  </body>
+</html>

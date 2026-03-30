@@ -1,8 +1,3 @@
-'use client';
-
-import Link from 'next/link';
-import pfp from '@/app/img/pfp.webp';
-import Image from 'next/image';
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 
@@ -12,12 +7,12 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 backdrop-blur-lg text-white py-3 shadow-md">
       <div className="container mx-auto px-4 flex justify-between items-center">
-        <Link href="/" className="flex items-center gap-4 text-white hover:text-white" shallow>
-          <Image
-            src={pfp.src} alt="Avatar" className="size-10 rounded-full" draggable={false} width={40} height={40}
+        <a href="/" className="flex items-center gap-4 text-white hover:text-white">
+          <img
+            src="/img/pfp.webp" alt="Avatar" className="size-10 rounded-full" draggable={false} width={40} height={40}
           />
           <h1 className="text-2xl font-bold">Tenshii.moe</h1>
-        </Link>
+        </a>
         <nav className="flex items-center">
           <button className="md:hidden mr-2" onClick={() => setOpenMenu(!openMenu)} aria-label="Toggle menu">
             {openMenu ? <X /> : <Menu />}
@@ -27,13 +22,13 @@ export default function Header() {
             data-open={openMenu} aria-label="Main navigation"
           >
             <li>
-              <Link href="/projects" shallow onClick={() => setOpenMenu(false)}>Projects</Link>
+              <a href="/projects" onClick={() => setOpenMenu(false)}>Projects</a>
             </li>
             <li>
-              <Link href="/#stats" shallow onClick={() => setOpenMenu(false)}>Programming Stats</Link>
+              <a href="/#stats" onClick={() => setOpenMenu(false)}>Programming Stats</a>
             </li>
             <li>
-              <Link href="/#setup" shallow onClick={() => setOpenMenu(false)}>Setup</Link>
+              <a href="/#setup" onClick={() => setOpenMenu(false)}>Setup</a>
             </li>
           </ul>
         </nav>

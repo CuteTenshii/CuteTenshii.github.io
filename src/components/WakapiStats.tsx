@@ -1,5 +1,3 @@
-'use client';
-
 import React, { useEffect, useState } from 'react';
 import {
   SiGo,
@@ -9,7 +7,7 @@ import {
   SiTypescript,
   SiWebstorm, SiYaml
 } from '@icons-pack/react-simple-icons';
-import VSCodeLogo from '@/app/components/VSCodeLogo';
+import VSCodeLogo from '@/components/VSCodeLogo';
 import { LoaderCircle } from 'lucide-react';
 
 export default function WakapiStats() {
