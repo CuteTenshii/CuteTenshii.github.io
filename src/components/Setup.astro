@@ -1,5 +1,7 @@
 ---
-import { Laptop, Cpu, MemoryStick, Gpu, HardDrive } from '@lucide/astro';
+import { Laptop, Cpu, MemoryStick, Gpu, HardDrive, Terminal } from '@lucide/astro';
+import { Webstorm, Goland, Git, Github, Firefoxbrowser, Bun, Postgresql, Sqlite, Insomnia, Discord, Youtubemusic, Bitwarden, Vmware, Zsh } from 'simple-icons-astro';
+import HeliumBrowser from './HeliumBrowser.astro';
 
 const specs = [
   {
@@ -28,6 +30,25 @@ const specs = [
     value: 'PNY CS900 960GB<br/>Samsung SSD 870 QVO 1TB<br/>Predator SSD GM7000 1TB',
   },
 ];
+
+const software = [
+  { name: 'WebStorm', category: 'Editor', Icon: Webstorm },
+  { name: 'GoLand', category: 'Editor', Icon: Goland },
+  { name: 'kitty', category: 'Terminal', Icon: Terminal },
+  { name: 'Zsh', category: 'Shell', Icon: Zsh },
+  { name: 'Git', category: 'VCS', Icon: Git },
+  { name: 'GitHub', category: 'VCS', Icon: Github },
+  { name: 'Firefox Nightly', category: 'Browser', Icon: Firefoxbrowser },
+  { name: 'Helium', category: 'Browser', Icon: HeliumBrowser },
+  { name: 'Bun', category: 'JS Runtime', Icon: Bun },
+  { name: 'PostgreSQL', category: 'Database', Icon: Postgresql },
+  { name: 'SQLite', category: 'Database', Icon: Sqlite },
+  { name: 'Insomnia', category: 'API Testing', Icon: Insomnia },
+  { name: 'Discord', category: 'Communication', Icon: Discord },
+  { name: 'YouTube Music', category: 'Music', Icon: Youtubemusic },
+  { name: 'Bitwarden', category: 'Passwords', Icon: Bitwarden },
+  { name: 'VMware', category: 'Virtualization', Icon: Vmware },
+];
 ---
 <div class="container px-4 py-8 pt-28 max-w-7xl mx-auto grid gap-8" id="setup">
   <div class="shadow-md rounded-lg p-6 relative">
@@ -53,21 +74,15 @@ const specs = [
   </div>
 
   <div class="bg-gray-800 shadow-md rounded-lg p-6">
-    <h3 class="text-2xl font-semibold mb-4">Software Stack</h3>
-    <p class="mb-4">My development environment includes the following software:</p>
-    <ul class="list-disc list-inside">
-      <li><span class="font-bold">Code Editor:</span> depends on the project, but primarily WebStorm and GoLand</li>
-      <li><span class="font-bold">Terminal:</span> kitty</li>
-      <li><span class="font-bold">Shell:</span> Zsh with Oh My Zsh</li>
-      <li><span class="font-bold">VCS:</span> Git + GitHub</li>
-      <li><span class="font-bold">Web Browsing:</span> Firefox Nightly</li>
-      <li><span class="font-bold">JS Runtime:</span> Bun <span class="text-xs text-gray-400">(faster and more efficient than Node.js)</span></li>
-      <li><span class="font-bold">Database:</span> PostgreSQL <span class="text-xs text-gray-400">(SQLite when I don't want to bother with DB setup)</span></li>
-      <li><span class="font-bold">API Testing:</span> Insomnia</li>
-      <li><span class="font-bold">Communication:</span> Discord <span class="text-xs text-gray-400">(this is where I'm most active)</span></li>
-      <li><span class="font-bold">Music Streaming:</span> YouTube Music</li>
-      <li><span class="font-bold">Password Management:</span> Bitwarden (self-hosted)</li>
-      <li><span class="font-bold">Virtualization:</span> VMware Workstation Pro</li>
-    </ul>
+    <h3 class="text-2xl font-semibold mb-6">Software Stack</h3>
+    <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-3">
+      {software.map(({ name, category, Icon }) => (
+        <div class="flex flex-col items-center gap-2 p-3 rounded-lg bg-gray-700/50 hover:bg-gray-700 transition-colors text-center">
+          <Icon size={32} />
+          <span class="text-sm font-medium leading-tight">{name}</span>
+          <span class="text-xs text-gray-400">{category}</span>
+        </div>
+      ))}
+    </div>
   </div>
 </div>
