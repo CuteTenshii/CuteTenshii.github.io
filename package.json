@@ -13,7 +13,8 @@
     "@icons-pack/react-simple-icons": "^13.13.0",
     "@lucide/astro": "^1.7.0",
     "astro": "^5.7.0",
-    "lucide-react": "^1.7.0"
+    "lucide-react": "^1.7.0",
+    "simple-icons-astro": "^16.1.0"
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.2.2",
