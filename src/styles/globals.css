@@ -9,7 +9,7 @@
         position: relative;
         background-color: #000;
         color: theme(colors.white);
-        font-family: 'Fira Mono', 'Apple Color Emoji', sans-serif;
+        font-family: Inter, system-ui, 'Apple Color Emoji', 'Noto Color Emoji', sans-serif;
     }
 
     html::before {
@@ -34,5 +34,15 @@
     a:hover {
         color: theme(colors.blue.300);
         text-decoration: underline;
+    }
+
+    h1, h2 {
+        font-family: Lato, sans-serif;
+    }
+}
+
+@layer utilities {
+    .font-lato {
+        font-family: Lato, sans-serif;
     }
 }
