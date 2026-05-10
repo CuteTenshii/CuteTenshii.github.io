@@ -12,6 +12,7 @@ import {
   Archlinux,
   Zsh,
   Astro as AstroIcon,
+  Javascript,
 } from "simple-icons-astro";
 
 type Tech = { name: string; Icon: any };
@@ -27,6 +28,7 @@ const T = {
   CF:        { name: "Cloudflare",   Icon: Cloudflare },
   ArchLinux: { name: "Arch Linux",   Icon: Archlinux },
   Zsh:       { name: "Zsh",          Icon: Zsh },
+  JS:        { name: "JavaScript",   Icon: Javascript },
 } satisfies Record<string, Tech>;
 
 const categories = [
@@ -128,9 +130,35 @@ const projects: Array<{
     category: "tool",
     tech: [T.TS, T.CF],
   },
+  {
+    name: "Deezer Enhancer",
+    description: "A browser extension that enhances the Deezer web player with additional features and improvements. (Abandoned)",
+    link: "https://github.com/CuteTenshii/deezer-enhancer",
+    image: null,
+    github: "deezer-enhancer",
+    category: "tool",
+    tech: [T.TS],
+  },
+  {
+    name: "Wplace.live Datamining",
+    description: "Datamining for the Wplace.live website. Extracts and renames files since their hashes change with every new build.",
+    link: "https://github.com/CuteTenshii/wplace-datamining",
+    image: null,
+    github: "wplace-datamining",
+    category: "reversing",
+    tech: [T.JS],
+  },
+  {
+    name: "guns.lol Datamining",
+    description: "Datamining for the guns.lol website.",
+    link: "https://github.com/CuteTenshii/guns-datamining",
+    image: null,
+    github: "guns-datamining",
+    category: "reversing",
+    tech: [T.JS],
+  },
 ];
 
-const githubToken = import.meta.env.PUBLIC_GITHUB_TOKEN ?? "";
 ---
 
 <BaseLayout
@@ -176,7 +204,7 @@ const githubToken = import.meta.env.PUBLIC_GITHUB_TOKEN ?? "";
     .filter-btn.active { background-color: white; color: rgb(17 24 39); }
   </style>
 
-  <script define:vars={{ githubToken }}>
+  <script>
     function initFilters() {
       const buttons = document.querySelectorAll(".filter-btn");
       const cards = document.querySelectorAll("[data-category]");
@@ -197,39 +225,20 @@ const githubToken = import.meta.env.PUBLIC_GITHUB_TOKEN ?? "";
     }
 
     async function loadGithubStats() {
-      if (!githubToken) return;
-
       const containers = Array.from(document.querySelectorAll("[data-github]"));
       if (!containers.length) return;
 
-      const repos = containers.map((el) => el.dataset.github);
-      const query = `{ ${repos.map((repo, i) => `
-        r${i}: repository(owner: "CuteTenshii", name: "${repo}") {
-          name stargazerCount pushedAt
-        }`).join("")} }`;
-
-      try {
-        const res = await fetch("https://api.github.com/graphql", {
-          method: "POST",
-          headers: { Authorization: `Bearer ${githubToken}`, "Content-Type": "application/json" },
-          body: JSON.stringify({ query }),
-        });
-        const { data } = await res.json();
-        if (!data) return;
-
-        const byName = Object.fromEntries(
-          Object.values(data).filter(Boolean).map((v) => [v.name, v])
-        );
-
-        containers.forEach((el) => {
-          const val = byName[el.dataset.github];
-          if (!val) return;
-          el.querySelector("[data-github-stars]").textContent = val.stargazerCount.toLocaleString();
-          el.querySelector("[data-github-updated]").textContent = formatDate(val.pushedAt);
+      await Promise.all(containers.map(async (el) => {
+        try {
+          const res = await fetch(`https://api.github.com/repos/CuteTenshii/${el.dataset.github}`);
+          if (!res.ok) return;
+          const data = await res.json();
+          el.querySelector("[data-github-stars]").textContent = data.stargazers_count.toLocaleString();
+          el.querySelector("[data-github-updated]").textContent = formatDate(data.pushed_at);
           el.classList.remove("hidden");
           el.classList.add("flex");
-        });
-      } catch {}
+        } catch {}
+      }));
     }
 
     document.addEventListener("astro:page-load", () => { initFilters(); loadGithubStats(); });
