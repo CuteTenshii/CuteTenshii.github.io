@@ -25,13 +25,13 @@
         filter: blur(10px);
     }
 
-    a {
+    .link {
         color: theme(colors.blue.500);
         text-decoration: none;
         transition: all 0.2s ease-in-out;
     }
 
-    a:hover {
+    .link:hover {
         color: theme(colors.blue.300);
         text-decoration: underline;
     }
