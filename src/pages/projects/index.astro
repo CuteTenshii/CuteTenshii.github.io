@@ -215,8 +215,8 @@ const projects: Array<{
 
   <script>
     function initFilters() {
-      const buttons = document.querySelectorAll(".filter-btn");
-      const cards = document.querySelectorAll("[data-category]");
+      const buttons = document.querySelectorAll<HTMLButtonElement>(".filter-btn");
+      const cards = document.querySelectorAll<HTMLAnchorElement>("[data-category]");
       buttons.forEach((btn) => {
         btn.addEventListener("click", () => {
           const filter = btn.dataset.filter;
@@ -229,21 +229,22 @@ const projects: Array<{
       });
     }
 
-    function formatDate(iso) {
+    function formatDate(iso: string) {
       return new Date(iso).toLocaleDateString("en-US", { month: "short", year: "numeric" });
     }
 
     async function loadGithubStats() {
-      const containers = Array.from(document.querySelectorAll("[data-github]"));
+      const containers = Array.from(document.querySelectorAll<HTMLDivElement>("[data-github]"));
       if (!containers.length) return;
 
       await Promise.all(containers.map(async (el) => {
         try {
           const res = await fetch(`https://api.github.com/repos/CuteTenshii/${el.dataset.github}`);
           if (!res.ok) return;
+
           const data = await res.json();
-          el.querySelector("[data-github-stars]").textContent = data.stargazers_count.toLocaleString();
-          el.querySelector("[data-github-updated]").textContent = formatDate(data.pushed_at);
+          el.querySelector<HTMLSpanElement>("[data-github-stars]")!.textContent = data.stargazers_count.toLocaleString();
+          el.querySelector<HTMLSpanElement>("[data-github-updated]")!.textContent = formatDate(data.pushed_at);
           el.classList.remove("hidden");
           el.classList.add("flex");
         } catch {}
